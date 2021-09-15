@@ -75,7 +75,6 @@ for(i=0; i<arrFr.length; i+=1){
   $("p").hide().fadeIn(3000);
 }
 $("h1").text("Мои друзья");
-// $("p").append("kexibq");
 
 
 /*#2. Мигающий заголовок
@@ -113,16 +112,24 @@ $("h1").fadeTo(2000, 0.5);	//Затухает до прозрачности 0.5 
 
 /*
 //Несколько классов и дочерние селекторы
-<h1 class = "bold color_red">абзац</h1>
+<h1 class = "bold color_red">абзац</h1>   // в данном селекторе 2 класса
 <h2 class = "bgzapas">абзац</h2>
 <h3 class = "button">абзац</h3>
 <div><p class = "bold color_red">абзац</p></div>
 
-h1, h2, .bgzapas, .button, h3 {                 ?либо без запятых?
+// Один и тот же класс может быть присвоен разным элементам и, кроме этого, 
+одному элементу можно присвоить несколько классов
+
+h1, h2, .bgzapas, .button, h3 {     //Вроде бы можно с запятыми и можно без запятых ипробелов (нужно пробовать)
   font-family: Arial, Helvetica, sans-serif; 
-  font-size: 1.2em;
   padding: 10px;
   background-color: #fcfaed;
+}
+h1.bold {           //присваиваем данный класс только заголовкам h1
+    color: green;
+}
+p.bold.color_red {  //присваиваем 2 (т.е. все) классы только элементам p
+    color: green;
 }
 div > p {              - стилизоваться будет контейнер p
   font-size: 1.2em;
